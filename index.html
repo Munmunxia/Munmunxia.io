@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="lib/vue.js"></script>
+    <link rel="stylesheet" href="凳子.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3689838_t1snstynid.css">
+
+</head>
+<body>
+    <section id="box">
+        <div class="left" >
+            <ul class="MainImage">
+                <li  alt="" v-for="(item,index) in datalist" v-if="current===index" :class="classobj">
+                    <img :src="item.Bgimg">
+                    
+                </ul>
+        </div>
+        <div class="right" >
+            <header>
+                <nav>
+                    <i class="iconfont icon-caidan"  @click="IcoClick()"></i>
+                </nav>
+            </header>
+            <h1 v-for="(item,index) in datalist" v-if="current===index">{{item.title}}</h1>
+            <ul class="minor">
+                <li v-for="(item,index) in datalist" @click="handleClick(index)" :class="current===index? 'active':''">
+                    <img :src="item.Bgimg" alt="">
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <script src="凳子.js"></script>
+</body>
+</html>
